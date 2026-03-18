@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Lock, User, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, Loader2, ArrowLeft } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import VisualBackground from '../components/VisualBackground';
 import EcoAulaLogo from '../components/EcoAulaLogo';
@@ -50,6 +50,17 @@ export default function Register() {
     return (
         <div className="min-h-screen relative flex items-center justify-center p-6 selection:bg-primary-500/30 selection:text-white">
             <VisualBackground variant="misty" />
+
+            <Link 
+                to="/" 
+                className="fixed top-6 left-6 md:top-10 md:left-10 z-50 flex items-center gap-3 px-3 py-2 bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-white transition-all hover:scale-105 active:scale-95 group/back shadow-2xl"
+                title="Volver al inicio"
+            >
+                <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full group-hover/back:bg-white/20 transition-colors">
+                    <ArrowLeft size={18} className="group-hover/back:-translate-x-0.5 transition-transform" />
+                </div>
+                <span className="text-sm font-bold tracking-tight pr-2">Volver al inicio</span>
+            </Link>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
